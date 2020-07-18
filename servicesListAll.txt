@@ -1,0 +1,1 @@
+enable-jackson,enable-xnio,enable-uadetector,enable-guicedee,enable-guicedee-services,enable-hazelcast,enable-hibernate,enable-jcache,enable-jstl,enable-standalone-services,enable-undertow,enable-ee4j,enable-guice,enable-commons,enable-ehcache,enable-primefaces

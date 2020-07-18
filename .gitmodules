@@ -1,0 +1,12 @@
+[submodule "Services"]
+	path = Services
+	url = https://github.com/GedMarc/GuicedEE-Services.git
+[submodule "BOM"]
+	path = BOM
+	url = https://github.com/GedMarc/GuicedEE-BOM.git
+[submodule "Projects"]
+	path = Projects
+	url = https://github.com/GedMarc/GuicedEE-Projects.git
+[submodule "Examples"]
+	path = Examples
+	url = https://github.com/GedMarc/GuicedEE-Examples.git
