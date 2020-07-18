@@ -29,7 +29,7 @@
         <profile>
             <id>enable-guicedee-projects</id>
             <modules>
-                <module>GuicedEEParent</module>
+                <module>Projects</module>
             </modules>
         </profile>
         <profile>
