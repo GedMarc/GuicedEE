@@ -17,8 +17,19 @@
 
     <modules>
         <module>BOM</module>
+		<module>BOM/ApacheBOM</module>
+        <module>BOM/ApacheCXFBOM</module>
+        <module>BOM/FasterXMLBOM</module>
+        <module>BOM/GoogleBOM</module>
+        <module>BOM/HibernateBOM</module>
+        <module>BOM/JakartaBOM</module>
+        <module>BOM/JBossBOM</module>
+        <module>BOM/StandaloneBOM</module>
+        <module>BOM/SwaggerBOM</module>
+        <module>BOM/TestLayoutBOM</module>
     </modules>
-
+	
+	
     <profiles>
         <profile>
             <id>enable-guicedee-services</id>
