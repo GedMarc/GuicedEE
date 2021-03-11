@@ -24,6 +24,7 @@ persistence.xml
 /.settings
 *.factorypath
 **/*.factorypath
+**/*.flattened-pom.xml
 
 **/target/**
 /target/*
