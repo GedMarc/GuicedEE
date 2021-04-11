@@ -49,5 +49,11 @@
                 <module>Examples</module>
             </modules>
         </profile>
+		<profile>
+	   <id>enable-jmod</id>
+		   <modules>
+			<module>JMod</module>
+		   </modules>
+	   </profile>
     </profiles>
 </project>
