@@ -2,14 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.guicedee</groupId>
-         <artifactId>guicedee-group</artifactId>
-        <version>0.0.0_0-SNAPSHOT</version>
-    </parent>
-
-    <artifactId>guicedservlets</artifactId>
+    <groupId>com.guicedee.servlets</groupId>
+    <artifactId>guicedservlets-jmod</artifactId>
     <version>0.0.0_0-SNAPSHOT</version>
+
     <name>GuicedServlets - JMod</name>
     <packaging>jmod</packaging>
 
@@ -17,6 +13,7 @@
         <dependency>
             <groupId>com.guicedee.servlets</groupId>
             <artifactId>guiced-undertow</artifactId>
+            <version>0.0.0_0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <artifactId>jakarta.servlet-api</artifactId>
@@ -100,6 +97,7 @@
         <dependency>
             <groupId>com.guicedee.servlets</groupId>
             <artifactId>guiced-websockets</artifactId>
+            <version>0.0.0_0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.guicedee</groupId>
@@ -179,6 +177,7 @@
 		 <dependency>
             <groupId>com.guicedee.servlets</groupId>
 			<artifactId>guiced-servlets</artifactId>
+             <version>0.0.0_0-SNAPSHOT</version>
              <exclusions>
                  <exclusion>
                      <groupId>com.guicedee</groupId>
@@ -211,10 +210,6 @@
                  <exclusion>
                      <groupId>com.fasterxml.jackson.datatype</groupId>
                      <artifactId>jackson-datatype-jdk8</artifactId>
-                 </exclusion>
-                 <exclusion>
-                     <groupId>com.guicedee.services</groupId>
-                     <artifactId>jakarta.servlet-api</artifactId>
                  </exclusion>
                  <exclusion>
                      <groupId>com.guicedee.services</groupId>
@@ -259,27 +254,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>1.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>${jdk.release}</version>
-                            <vendor>oracle</vendor>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>com.guicedee.services</groupId>
                 <artifactId>jmod-maven-plugin</artifactId>
                 <version>0.0.0_0-SNAPSHOT</version>
@@ -291,29 +265,10 @@
                     <dependency>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm</artifactId>
-                        <version>${maven.asm.version}</version>
+                        <version>9.1</version>
                     </dependency>
                 </dependencies>
             </plugin>
-            <!--<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jlink-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>make-image</id>
-                        <goals>
-                            <goal>jlink</goal>
-                        </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <modulePaths>
-                                <modulePath>${project.build.directory}/jmods/</modulePath>
-                            </modulePaths>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
         </plugins>
     </build>
 </project>

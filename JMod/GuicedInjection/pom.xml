@@ -2,23 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.guicedee</groupId>
-         <artifactId>guicedee-group</artifactId>
-        <version>0.0.0_0-SNAPSHOT</version>
-    </parent>
+    <groupId>com.guicedee</groupId>
 
-    <artifactId>guicedinjection</artifactId>
+    <artifactId>guicedinjection-jmod</artifactId>
     <version>0.0.0_0-SNAPSHOT</version>
-    <name>GuicedInjection - JMod</name>
+    <name>GuicedInjection</name>
     <packaging>jmod</packaging>
 
     <dependencies>
 		 <dependency>
             <groupId>com.guicedee</groupId>
             <artifactId>guiced-injection</artifactId>
-             <exclusions>
-             </exclusions>
         </dependency>
         <dependency>
             <groupId>com.guicedee.services</groupId>
@@ -28,27 +22,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>1.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>${jdk.release}</version>
-                            <vendor>oracle</vendor>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>com.guicedee.services</groupId>
                 <artifactId>jmod-maven-plugin</artifactId>
@@ -65,25 +38,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <!--<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jlink-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>make-image</id>
-                        <goals>
-                            <goal>jlink</goal>
-                        </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <modulePaths>
-                                <modulePath>${project.build.directory}/jmods/</modulePath>
-                            </modulePaths>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
         </plugins>
     </build>
 </project>
