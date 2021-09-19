@@ -25,7 +25,8 @@ persistence.xml
 *.factorypath
 **/*.factorypath
 **/*.flattened-pom.xml
-
+**/flatter.pom
+flatter.pom
 **/target/**
 /target/*
 **/target
