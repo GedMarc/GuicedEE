@@ -15,22 +15,24 @@
     <description>The Parent Holder for the Guiced EE JMPS System</description>
     <url>https://guicedee.com</url>
 
-    <modules>
-        <module>BOM</module>
-		<module>BOM/ApacheBOM</module>
-        <module>BOM/ApacheCXFBOM</module>
-        <module>BOM/FasterXMLBOM</module>
-        <module>BOM/GoogleBOM</module>
-        <module>BOM/HibernateBOM</module>
-        <module>BOM/JakartaBOM</module>
-        <module>BOM/JBossBOM</module>
-        <module>BOM/StandaloneBOM</module>
-        <module>BOM/SwaggerBOM</module>
-        <module>BOM/TestLayoutBOM</module>
-    </modules>
-	
-	
     <profiles>
+        <profile>
+            <id>enable-guicedee</id>
+            <modules>
+                <module>BOM</module>
+                <module>BOM/ApacheBOM</module>
+                <module>BOM/ApacheCXFBOM</module>
+                <module>BOM/FasterXMLBOM</module>
+                <module>BOM/GoogleBOM</module>
+                <module>BOM/HibernateBOM</module>
+                <module>BOM/JakartaBOM</module>
+                <module>BOM/JBossBOM</module>
+                <module>BOM/StandaloneBOM</module>
+                <module>BOM/SwaggerBOM</module>
+                <module>BOM/TestLayoutBOM</module>
+            </modules>
+        </profile>
+
         <profile>
             <id>enable-guicedee-services</id>
             <modules>
