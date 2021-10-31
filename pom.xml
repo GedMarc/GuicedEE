@@ -11,6 +11,8 @@
     <artifactId>guicedee-group</artifactId>
     <packaging>pom</packaging>
 
+    <version>0.0.0_0-SNAPSHOT</version>
+
     <name>GuicedEE Master POM</name>
     <description>The Parent Holder for the Guiced EE JMPS System</description>
     <url>https://guicedee.com</url>
