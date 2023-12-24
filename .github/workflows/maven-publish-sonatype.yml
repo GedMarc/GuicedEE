@@ -1,0 +1,46 @@
+name: Maven Release (BOM)
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        java-version: [ 21 ]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'oracle'
+        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - name: Update Settings.xml
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        servers: >
+          [
+            {
+              "id": "sona-snapshot",
+              "username": "${secrets.SONA_USERNAME}",
+              "password": "${secrets.SONA_PASSWORD}"
+            },
+            {
+              "id": "sona-release",
+              "username": "${secrets.SONA_USERNAME}",
+              "password": "${secrets.SONA_PASSWORD}"
+            }
+          ]
+
+    - name: Build with Maven
+      run: mvn -B source:jar javadoc:jar package --file pom.xml
+    - name: Publish to GitHub Packages
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Psonatype-distribution
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
